@@ -21,8 +21,23 @@ const binaryStringToArray = str => {
   return binary8bitStr.split(',');
 };
 
+const binaryToAsciiCondensed = str => {
+  str = binaryStringToArray(str);
+  for (let i = 0; i < str.length; i++) {
+    str[i] = String.fromCharCode(parseInt(str[i], 2));
+  }
+  return str.join('');
+};
+
 const binaryToAscii = str => {
-  // Your code here
+  let binaries = binaryStringToArray(str);
+  let stringArr = [];
+  for (let i = 0; i < binaries.length; i++) {
+    let decimal = parseInt(binaries[i], 2);
+    let str = String.fromCharCode(decimal);
+    stringArr.push(str);
+  }
+  return stringArr.join('');
 };
 
 /******************************************************************************/
