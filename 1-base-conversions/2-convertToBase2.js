@@ -3,7 +3,10 @@
 /******************************************************************************/
 
 const convertToBase2 = element => {
-  // Your code here
+  if(element.toString().slice(0,2) === '0x'){
+    return '0b' + parseInt(element.slice(2), 16).toString(2);
+  }
+  return '0b' + element.toString(2); 
 };
 
 /******************************************************************************/
