@@ -21,7 +21,16 @@ const binaryStringToArray = str => {
   return binary8bitStr.split(',');
 };
 
+const binaryToAsciiCondensed = str => {
+  str = binaryStringToArray(str);
+  for (let i = 0; i < str.length; i++) {
+    str[i] = String.fromCharCode(parseInt(str[i], 2));
+  }
+  return str.join('');
+};
+
 const binaryToAscii = str => {
+<<<<<<< HEAD
   // let binarys = binaryStringToArray(str);
   // let strArr = []; 
 
@@ -32,6 +41,16 @@ const binaryToAscii = str => {
   // }
   // return strArr.join('')
   return binaryStringToArray(str).map(char => String.fromCharCode(parseInt(char,2))).join('')
+=======
+  let binaries = binaryStringToArray(str);
+  let stringArr = [];
+  for (let i = 0; i < binaries.length; i++) {
+    let decimal = parseInt(binaries[i], 2);
+    let str = String.fromCharCode(decimal);
+    stringArr.push(str);
+  }
+  return stringArr.join('');
+>>>>>>> a432371cb14751fabb0f0f3dab9567ccdc193ffe
 };
 
 /******************************************************************************/

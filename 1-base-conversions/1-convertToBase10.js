@@ -3,10 +3,10 @@
 /******************************************************************************/
 
 const convertToBase10 = str => {
-  if(str.slice(0, 2) === '0x'){ 
-  return parseInt(str.slice(2), 16)
-}
- return parseInt(str.slice(2), 2)
+  if(str.slice(0, 2) === '0x'){
+    return parseInt(str.slice(2), 16)
+  }
+    return parseInt(str.slice(2), 2)
 };
 
 /******************************************************************************/
